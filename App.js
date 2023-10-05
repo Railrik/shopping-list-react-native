@@ -5,7 +5,7 @@ import {
   FlatList
 } from 'react-native';
 
-import Products from './Components/Products';
+import Product from './Components/Product';
 import AddProduct from './Components/AddProduct';
 
 const App = () => {
@@ -20,13 +20,26 @@ const App = () => {
     }
   }
 
+  const deleteProduct = (key) => {
+    setProductList(currentProductList => {
+      return currentProductList.filter(product => product.key !== key)
+    })
+  }
+
   return (
     <View style={styles.container}>
       <AddProduct submitHandler={submitHandler} />
       <View style={styles.items}>
         <FlatList
           data={productList}
-          renderItem={({ item }) => <Products name={item.name} />}
+          renderItem={({ item }) => (
+            <Product
+              name={item.name}
+              idString={item.key}
+              deleteProduct={deleteProduct}
+            />
+          )
+          }
         />
       </View>
     </View>
@@ -35,16 +48,17 @@ const App = () => {
 
 
 const styles = StyleSheet.create({
+  items: {
+    marginBottom: 50,
+    height: "100%"
+  },
   container: {
     padding: 40,
     paddingTop: 60,
     backgroundColor: "wheat",
     height: '100%',
   },
-  items: {
-    marginTop: 10,
-    marginBottom: 60
-  },
+
 });
 
 export default App;
