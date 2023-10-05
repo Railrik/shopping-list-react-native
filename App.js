@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   FlatList,
-  Alert
 } from 'react-native';
 
 import Product from './Components/Product';
@@ -13,23 +12,10 @@ const App = () => {
   const [productList, setProductList] = useState([]);
 
   const submitHandler = (product) => {
-    //vérification si aucun produit vide
-    if (product.trim() !== '' && product.length > 1) {
-      const idString = Date.now().toString();
-      //spread operator
-      setProductList(currentProductList => [{ key: idString, name: product }, ...currentProductList]);
-    } else {
-      Alert.alert('Erreur', `Vous devez entrer deux caractères minimum`, [
-        {
-          text: 'Retour',
-        }
-      ],
-        {
-          //permet de cliquer en dehors de la fenetre Alert
-          cancelable: true,
-        }
-      )
-    }
+
+    const idString = Date.now().toString();
+    //spread operator
+    setProductList(currentProductList => [{ key: idString, name: product }, ...currentProductList]);
   }
 
   const deleteProduct = (key) => {
