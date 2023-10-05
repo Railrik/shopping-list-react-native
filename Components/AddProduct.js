@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 const AddProduct = ({ submitHandler }) => {
+
     const [product, setProduct] = useState('');
     const [isSubmitBtnDisabled, setIsSubmitBtnDisabled] = useState(true);
 
@@ -41,6 +42,8 @@ const AddProduct = ({ submitHandler }) => {
     );
 };
 
+export default AddProduct;
+
 const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: "row",
@@ -55,5 +58,3 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     }
 })
-
-export default AddProduct;

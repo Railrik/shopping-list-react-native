@@ -1,20 +1,21 @@
 import {
     StyleSheet,
     View,
-    Text,
-    Pressable,
+    Text
 } from 'react-native';
+
+import DeleteProduct from './DeleteProduct';
 
 const Product = ({ name, deleteProduct, idString }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.name}>{name}</Text>
-            <Pressable onPress={() => deleteProduct(idString)}>
-                <Text style={styles.deleteButton}>X</Text>
-            </Pressable>
+            <DeleteProduct deleteProduct={deleteProduct} idString={idString} />
         </View>
     );
 };
+
+export default Product;
 
 const styles = StyleSheet.create({
     container: {
@@ -29,13 +30,5 @@ const styles = StyleSheet.create({
     name: {
         color: 'lavender',
         fontSize: 17,
-
-    },
-    deleteButton: {
-        color: 'maroon',
-        fontSize: 20,
-        fontWeight: "bold",
-    },
-});
-
-export default Product;
+    }
+})
