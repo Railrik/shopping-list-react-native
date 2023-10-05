@@ -9,7 +9,7 @@ const Product = ({ name, deleteProduct, idString }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.name}>{name}</Text>
-            <Pressable onLongPress={() => deleteProduct(idString)}>
+            <Pressable onPress={() => deleteProduct(idString)}>
                 <Text style={styles.deleteButton}>X</Text>
             </Pressable>
         </View>
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
 
     },
     deleteButton: {
-        color: 'indianred',
-        fontSize: 30,
+        color: 'maroon',
+        fontSize: 20,
         fontWeight: "bold",
     },
 });
