@@ -1,22 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native';
 
-const Products = () => {
+const Products = ({ name }) => {
     return (
-        <View style={styles.items}>
-            <Text style={styles.element}>Product one</Text>
-            <Text style={styles.element}>Product two</Text>
-            <Text style={styles.element}>Product three</Text>
-            <Text style={styles.element}>Product Four</Text>
-            <Text style={styles.element}>Product Five</Text>
-        </View>
-    )
-}
-
-export default Products
+        <Text style={styles.element}>{name}</Text>
+    );
+};
 
 const styles = StyleSheet.create({
-    items: {
-    },
+
     element: {
         backgroundColor: "peru",
         color: "lavender",
@@ -25,5 +20,6 @@ const styles = StyleSheet.create({
         //group margin top and bottom
         marginVertical: 6,
     }
+});
 
-})
+export default Products;
