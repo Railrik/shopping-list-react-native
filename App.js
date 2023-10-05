@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   StyleSheet,
   View,
-  FlatList,
+  FlatList
 } from 'react-native';
 
 import Product from './Components/Product';
@@ -12,7 +12,6 @@ const App = () => {
   const [productList, setProductList] = useState([]);
 
   const submitHandler = (product) => {
-
     const idString = Date.now().toString();
     //spread operator
     setProductList(currentProductList => [{ key: idString, name: product }, ...currentProductList]);
@@ -44,6 +43,7 @@ const App = () => {
   );
 };
 
+export default App;
 
 const styles = StyleSheet.create({
   items: {
@@ -55,8 +55,5 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     backgroundColor: "wheat",
     height: '100%',
-  },
-
+  }
 });
-
-export default App;
