@@ -25,7 +25,7 @@ Vous pouvez ajouter de nouveaux produits et les supprimer de la liste.
 Clonez ce dépôt :
 
 ```bash
-git clone https://github.com/votre-utilisateur/shopping-list-react-native.git
+git clone https://github.com/Railrik/shopping-list-react-native.git
 ```
 
 Installer le projet :
