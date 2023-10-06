@@ -4,14 +4,14 @@ import {
     Pressable
 } from 'react-native';
 
-const DeleteProduct = ({ deleteProduct, idString }) => {
+const DeleteProduct = ({ deleteProductModal, idString }) => {
 
-    const handleDelete = () => {
-        deleteProduct(idString);
+    const handleDeleteConfirmModal = () => {
+        deleteProductModal(idString)
     };
 
     return (
-        <Pressable onPress={handleDelete}>
+        <Pressable onPress={handleDeleteConfirmModal}>
             <Text style={styles.deleteButton}>X</Text>
         </Pressable>
     );

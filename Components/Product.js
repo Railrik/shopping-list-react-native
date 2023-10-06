@@ -6,11 +6,11 @@ import {
 
 import DeleteProduct from './DeleteProduct';
 
-const Product = ({ name, deleteProduct, idString }) => {
+const Product = ({ name, deleteProductModal, idString }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.name}>{name}</Text>
-            <DeleteProduct deleteProduct={deleteProduct} idString={idString} />
+            <DeleteProduct deleteProductModal={deleteProductModal} idString={idString} />
         </View>
     );
 };
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
         color: 'lavender',
         fontSize: 17,
     }
-})
+});
