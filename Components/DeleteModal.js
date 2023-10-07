@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 10,
   },
   modalHeaderText: {
-    color: "maroon",
+    color: "crimson",
   },
   modalBody: {
     flex: 1,

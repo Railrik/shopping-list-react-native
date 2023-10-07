@@ -19,16 +19,17 @@ export default Product;
 
 const styles = StyleSheet.create({
     container: {
+        position: "relative",
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'peru',
-        padding: 15,
-        borderRadius: 10,
-        marginVertical: 6,
+        backgroundColor: 'aliceblue',
+        marginTop: 30,
+        marginVertical: 1,
     },
     name: {
-        color: 'lavender',
+        color: 'black',
         fontSize: 17,
+        padding: 15,
     }
 });
