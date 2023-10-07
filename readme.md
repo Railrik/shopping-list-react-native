@@ -7,11 +7,11 @@
 Cette démo d' application mobile vous permet de créer et gérer votre liste de courses (par exemple).
 Vous pouvez ajouter de nouveaux produits et les supprimer de la liste.
 
-![Demo Vidéo](https://ligny.pro/assets/shopping-list-react-native.gif)
+![Demo Vidéo](https://ligny.pro/assets/shopping-list-react-native-1.gif)
 
 ## Fonctionnalités
 
-- Ajoutez des produits à votre liste.
+- Ajoutez des produits à votre liste en multiligne.
 - Supprimez des produits de la liste.
 - Confirmation de la suppression.
 
