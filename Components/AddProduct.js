@@ -32,8 +32,11 @@ const AddProduct = ({ submitHandler }) => {
                 placeholder="Ajouter un produit"
                 onChangeText={inputHandler}
                 value={product}
+                multiline
+                maxLength={255}
             />
             <Button
+                style={styles.validButton}
                 title="Valider"
                 onPress={handleClick}
                 disabled={isSubmitBtnDisabled}
@@ -46,15 +49,14 @@ export default AddProduct;
 
 const styles = StyleSheet.create({
     inputContainer: {
-        flexDirection: "row",
         marginBottom: 15,
     },
     textInput: {
-        borderColor: "grey",
-        borderWidth: 1,
-        padding: 5,
+        borderBottomColor: "gainsboro",
+        borderBottomWidth: 1,
+        padding: 10,
         paddingLeft: 9,
         fontSize: 18,
         flexGrow: 1,
-    }
+    },
 })
