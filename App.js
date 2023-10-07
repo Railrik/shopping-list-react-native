@@ -5,7 +5,9 @@ import {
   FlatList,
   Text,
   Modal,
-  Pressable
+  Pressable,
+  RefreshControl,
+  Alert
 } from 'react-native';
 
 import Product from './Components/Product';
@@ -16,6 +18,7 @@ const App = () => {
   const [productList, setProductList] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [keyTodelete, setKeyToDelete] = useState('');
+  const [refreshing, setRefreshing] = useState(false);
 
   const submitHandler = (product) => {
     const idString = Date.now().toString();
@@ -41,6 +44,11 @@ const App = () => {
     setShowDeleteModal(true)
   }
 
+  const onRefreshing = () => {
+    setRefreshing(true);
+
+  }
+
   return (
     <View style={styles.container}>
       <DeleteModal
@@ -61,6 +69,10 @@ const App = () => {
             />
           )
           }
+          refreshControl={
+            <RefreshControl refreshing={false} onRefresh={onRefreshing} />
+          }
+
         />
       </View>
     </View>
@@ -71,13 +83,13 @@ export default App;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 40,
+    padding: 10,
     paddingTop: 60,
-    backgroundColor: "wheat",
-    height: '100%',
+    backgroundColor: "white",
+    flex: 1
   },
   items: {
     marginBottom: 50,
-    height: "100%"
+    flex: 1
   }
 });
