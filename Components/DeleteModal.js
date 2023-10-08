@@ -4,8 +4,8 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
-
 import BtnComponent from './BtnComponent';
+import colors from '../Constants/colors';
 
 const DeleteModal = ({ visible, onRequestClose, onCancel, onConfirm }) => {
   return (
@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
   modalContent: {
     alignItems: "center",
     borderRadius: 10,
-    backgroundColor: "white",
+    backgroundColor: colors.white,
     width: "90%",
     height: 250,
   },
   modalHeader: {
     borderBottomWidth: 1,
-    borderColor: "gainsboro",
+    borderColor: colors.secondary,
     width: "100%",
     padding: 10,
     alignItems: "center",
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 10,
   },
   modalHeaderText: {
-    color: "tomato",
+    color: colors.danger,
   },
   modalBody: {
     flex: 1,
@@ -92,13 +92,12 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     padding: 10,
     width: "100%",
-    borderColor: "gainsboro",
+    borderColor: colors.secondary,
   },
   btnW45: {
     width: "45%",
   },
   btnDelete: {
-    backgroundColor: "tomato",
+    backgroundColor: colors.danger,
   }
-
 });

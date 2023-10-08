@@ -3,8 +3,8 @@ import {
     View,
     Text
 } from 'react-native';
-
 import DeleteProduct from './DeleteProduct';
+import colors from '../Constants/colors';
 
 const Product = ({ name, deleteProductModal, idString }) => {
     return (
@@ -20,15 +20,15 @@ export default Product;
 const styles = StyleSheet.create({
     container: {
         position: "relative",
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'aliceblue',
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        backgroundColor: colors.white,
         marginTop: 10,
         marginVertical: 1,
     },
     name: {
-        color: 'black',
+        color: colors.dark,
         fontSize: 17,
         padding: 15,
     }

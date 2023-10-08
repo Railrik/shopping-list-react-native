@@ -2,8 +2,8 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
-
 import BtnComponent from './BtnComponent';
+import colors from '../Constants/colors';
 
 const DeleteProduct = ({ deleteProductModal, idString }) => {
 
@@ -28,16 +28,16 @@ export default DeleteProduct;
 
 const styles = StyleSheet.create({
     container: {
-        position: 'absolute',
+        position: "absolute",
         top: 0,
         right: 0,
         height: "100%",
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: "center",
+        justifyContent: "center",
     },
     deleteButton: {
         flex: 1,
-        backgroundColor: "tomato"
+        backgroundColor: colors.danger
     },
 });
 
