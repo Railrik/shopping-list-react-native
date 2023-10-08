@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import {
     StyleSheet,
     View,
-    TextInput,
 } from 'react-native';
 import BtnComponent from './BtnComponent';
-import colors from '../Constants/colors';
+import InputComponent from './InputComponent';
 
 const AddProduct = ({ submitHandler }) => {
 
@@ -28,14 +27,15 @@ const AddProduct = ({ submitHandler }) => {
 
     return (
         <View style={styles.inputContainer}>
-            <TextInput
+            <InputComponent
                 style={styles.textInput}
-                placeholder="Ajouter un produit"
-                onChangeText={inputHandler}
-                value={product}
+                inputPlaceholder="Ajouter un produit"
+                onChangeHandler={inputHandler}
+                inputValue={product}
                 multiline
                 maxLength={255}
             />
+
             <BtnComponent
                 onPressHandler={handleClick}
                 disabledBtn={isSubmitBtnDisabled}
@@ -53,10 +53,6 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     textInput: {
-        backgroundColor: colors.white,
-        marginBottom: 10,
-        padding: 10,
-        textAlign: "center",
-        fontSize: 18,
-    },
+        borderRadius: 5
+    }
 })
