@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'aliceblue',
-        marginTop: 30,
+        marginTop: 10,
         marginVertical: 1,
     },
     name: {

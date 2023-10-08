@@ -11,6 +11,8 @@ import Product from './Components/Product';
 import AddProduct from './Components/AddProduct';
 import DeleteModal from './Components/DeleteModal';
 import DismissKeyboard from './Components/DismissKeyboard';
+import Header from './Components/Header';
+
 
 const App = () => {
   const [productList, setProductList] = useState([]);
@@ -50,33 +52,36 @@ const App = () => {
   return (
     <DismissKeyboard>
       <ImageBackground
-        style={styles.container}
+        style={styles.bgImage}
         source={require('./assets/shopping-bg.jpg')}
         resizeMode="cover"
       >
-        <DeleteModal
-          visible={showDeleteModal}
-          onRequestClose={() => setShowDeleteModal(false)}
-          onCancel={cancelDelete}
-          onConfirm={() => deleteProduct(keyTodelete)}
-        />
-        <AddProduct submitHandler={submitHandler} />
-        <View style={styles.items}>
-          <FlatList
-            data={productList}
-            renderItem={({ item }) => (
-              <Product
-                name={item.name}
-                idString={item.key}
-                deleteProductModal={deleteProductModal}
-              />
-            )
-            }
-            refreshControl={
-              <RefreshControl refreshing={false} onRefresh={onRefreshing} />
-            }
-
+        <Header />
+        <View style={styles.container}>
+          <DeleteModal
+            visible={showDeleteModal}
+            onRequestClose={() => setShowDeleteModal(false)}
+            onCancel={cancelDelete}
+            onConfirm={() => deleteProduct(keyTodelete)}
           />
+          <AddProduct submitHandler={submitHandler} />
+          <View style={styles.items}>
+            <FlatList
+              data={productList}
+              renderItem={({ item }) => (
+                <Product
+                  name={item.name}
+                  idString={item.key}
+                  deleteProductModal={deleteProductModal}
+                />
+              )
+              }
+              refreshControl={
+                <RefreshControl refreshing={false} onRefresh={onRefreshing} />
+              }
+
+            />
+          </View>
         </View>
       </ImageBackground>
     </DismissKeyboard>
@@ -86,10 +91,11 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
+  bgImage: {
+    flex: 1,
+  },
   container: {
     padding: 10,
-    paddingTop: 60,
-    backgroundColor: "white",
     flex: 1,
   },
   items: {
