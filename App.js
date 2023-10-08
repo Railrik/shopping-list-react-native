@@ -3,16 +3,13 @@ import {
   StyleSheet,
   View,
   FlatList,
-  Text,
-  Modal,
-  Pressable,
   RefreshControl,
-  Alert
 } from 'react-native';
 
 import Product from './Components/Product';
 import AddProduct from './Components/AddProduct';
 import DeleteModal from './Components/DeleteModal';
+import DismissKeyboard from './Components/DismissKeyboard';
 
 const App = () => {
   const [productList, setProductList] = useState([]);
@@ -50,32 +47,34 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <DeleteModal
-        visible={showDeleteModal}
-        onRequestClose={() => setShowDeleteModal(false)}
-        onCancel={cancelDelete}
-        onConfirm={() => deleteProduct(keyTodelete)}
-      />
-      <AddProduct submitHandler={submitHandler} />
-      <View style={styles.items}>
-        <FlatList
-          data={productList}
-          renderItem={({ item }) => (
-            <Product
-              name={item.name}
-              idString={item.key}
-              deleteProductModal={deleteProductModal}
-            />
-          )
-          }
-          refreshControl={
-            <RefreshControl refreshing={false} onRefresh={onRefreshing} />
-          }
-
+    <DismissKeyboard>
+      <View style={styles.container}>
+        <DeleteModal
+          visible={showDeleteModal}
+          onRequestClose={() => setShowDeleteModal(false)}
+          onCancel={cancelDelete}
+          onConfirm={() => deleteProduct(keyTodelete)}
         />
+        <AddProduct submitHandler={submitHandler} />
+        <View style={styles.items}>
+          <FlatList
+            data={productList}
+            renderItem={({ item }) => (
+              <Product
+                name={item.name}
+                idString={item.key}
+                deleteProductModal={deleteProductModal}
+              />
+            )
+            }
+            refreshControl={
+              <RefreshControl refreshing={false} onRefresh={onRefreshing} />
+            }
+
+          />
+        </View>
       </View>
-    </View>
+    </DismissKeyboard>
   );
 };
 

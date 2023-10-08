@@ -1,4 +1,10 @@
-import { Modal, View, Text, Pressable, StyleSheet } from 'react-native';
+import {
+  Modal,
+  View,
+  Text,
+  Pressable,
+  StyleSheet
+} from 'react-native';
 
 const DeleteModal = ({ visible, onRequestClose, onCancel, onConfirm }) => {
   return (
