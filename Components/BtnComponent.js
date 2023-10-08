@@ -3,7 +3,8 @@ import {
     Text,
     TouchableOpacity,
     View
-} from 'react-native'
+} from 'react-native';
+import colors from '../Constants/colors';
 
 const BtnComponent = ({ onPressHandler, disabledBtn, style, children }) => {
     return (
@@ -23,16 +24,16 @@ export default BtnComponent
 
 const styles = StyleSheet.create({
     btn: {
-        backgroundColor: 'dodgerblue',
+        backgroundColor: colors.primary,
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
         padding: 10,
     },
     btnText: {
-        color: "white",
+        color: colors.white,
     },
     disabledBtn: {
-        backgroundColor: "grey"
+        backgroundColor: colors.secondary
     }
 })

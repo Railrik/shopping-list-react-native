@@ -4,8 +4,8 @@ import {
     View,
     TextInput,
 } from 'react-native';
-
 import BtnComponent from './BtnComponent';
+import colors from '../Constants/colors';
 
 const AddProduct = ({ submitHandler }) => {
 
@@ -53,9 +53,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     textInput: {
-        borderBottomColor: "gainsboro",
-        backgroundColor: "white",
-        borderBottomWidth: 1,
+        backgroundColor: colors.white,
         marginBottom: 10,
         padding: 10,
         textAlign: "center",

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import colors from '../Constants/colors';
 
 const Header = () => {
     return (
@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "lightslategrey"
+        backgroundColor: colors.info
     },
     headerText: {
         fontSize: 20,
-        color: "white"
+        color: colors.white
     }
 })

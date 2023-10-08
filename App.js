@@ -13,7 +13,6 @@ import DeleteModal from './Components/DeleteModal';
 import DismissKeyboard from './Components/DismissKeyboard';
 import Header from './Components/Header';
 
-
 const App = () => {
   const [productList, setProductList] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -46,7 +45,6 @@ const App = () => {
 
   const onRefreshing = () => {
     setRefreshing(true);
-
   }
 
   return (
