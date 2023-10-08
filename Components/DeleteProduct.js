@@ -1,9 +1,9 @@
 import {
     StyleSheet,
     View,
-    Text,
-    Pressable
 } from 'react-native';
+
+import BtnComponent from './BtnComponent';
 
 const DeleteProduct = ({ deleteProductModal, idString }) => {
 
@@ -12,11 +12,15 @@ const DeleteProduct = ({ deleteProductModal, idString }) => {
     };
 
     return (
-        <Pressable onPress={handleDeleteConfirmModal} style={styles.container}>
-            <View style={styles.deleteButtonContainer}>
-                <Text style={styles.deleteButton}>X</Text>
-            </View>
-        </Pressable>
+        <View style={styles.container}>
+            <BtnComponent
+                onPressHandler={handleDeleteConfirmModal}
+                disabled={false}
+                style={styles.deleteButton}
+            >
+                X
+            </BtnComponent>
+        </View>
     );
 };
 
@@ -28,18 +32,12 @@ const styles = StyleSheet.create({
         top: 0,
         right: 0,
         height: "100%",
-    },
-    deleteButtonContainer: {
-        flex: 1,
-        width: 50,
-        backgroundColor: 'crimson',
-        // borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },
     deleteButton: {
-        color: 'white',
-        fontSize: 15,
+        flex: 1,
+        backgroundColor: "tomato"
     },
 });
 

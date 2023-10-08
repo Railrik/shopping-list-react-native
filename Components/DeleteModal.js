@@ -2,9 +2,10 @@ import {
   Modal,
   View,
   Text,
-  Pressable,
   StyleSheet
 } from 'react-native';
+
+import BtnComponent from './BtnComponent';
 
 const DeleteModal = ({ visible, onRequestClose, onCancel, onConfirm }) => {
   return (
@@ -24,12 +25,23 @@ const DeleteModal = ({ visible, onRequestClose, onCancel, onConfirm }) => {
             <Text style={styles.modalBodyText}>Êtes-vous sûr de vouloir supprimer ce produit ?</Text>
           </View>
           <View style={styles.modalFooter}>
-            <Pressable onPress={onCancel} style={styles.pressableBtnModal}>
-              <Text style={styles.modalFooterBtnCancel}>Annuler</Text>
-            </Pressable>
-            <Pressable onPress={onConfirm} style={styles.pressableBtnModal}>
-              <Text style={styles.modalFooterBtnValid}>Ok</Text>
-            </Pressable>
+            <View style={styles.btnW45}>
+              <BtnComponent
+                onPressHandler={onCancel}
+                disabled={false}
+              >
+                Annuler
+              </BtnComponent>
+            </View>
+            <View style={styles.btnW45}>
+              <BtnComponent
+                onPressHandler={onConfirm}
+                disabled={false}
+                style={styles.btnDelete}
+              >
+                Supprimer
+              </BtnComponent>
+            </View>
           </View>
         </View>
       </View>
@@ -63,7 +75,7 @@ const styles = StyleSheet.create({
     borderTopEndRadius: 10,
   },
   modalHeaderText: {
-    color: "crimson",
+    color: "tomato",
   },
   modalBody: {
     flex: 1,
@@ -77,24 +89,16 @@ const styles = StyleSheet.create({
   modalFooter: {
     flexDirection: "row",
     justifyContent: "space-between",
-  },
-  pressableBtnModal: {
     borderTopWidth: 1,
+    padding: 10,
+    width: "100%",
     borderColor: "gainsboro",
-    flexDirection: "row",
-    flex: 1,
   },
-  modalFooterBtnCancel: {
-    padding: 10,
-    borderBottomLeftRadius: 10,
-    fontSize: 17,
-    textAlign: "center",
-    width: "100%",
+  btnW45: {
+    width: "45%",
   },
-  modalFooterBtnValid: {
-    padding: 10,
-    fontSize: 17,
-    textAlign: "center",
-    width: "100%",
-  },
+  btnDelete: {
+    backgroundColor: "tomato",
+  }
+
 });
