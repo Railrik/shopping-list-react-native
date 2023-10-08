@@ -3,8 +3,9 @@ import {
     StyleSheet,
     View,
     TextInput,
-    Button
 } from 'react-native';
+
+import BtnComponent from './BtnComponent';
 
 const AddProduct = ({ submitHandler }) => {
 
@@ -35,12 +36,12 @@ const AddProduct = ({ submitHandler }) => {
                 multiline
                 maxLength={255}
             />
-            <Button
-                style={styles.validButton}
-                title="Valider"
-                onPress={handleClick}
-                disabled={isSubmitBtnDisabled}
-            />
+            <BtnComponent
+                onPressHandler={handleClick}
+                disabledBtn={isSubmitBtnDisabled}
+            >
+                Valider
+            </BtnComponent>
         </View>
     );
 };
@@ -53,11 +54,11 @@ const styles = StyleSheet.create({
     },
     textInput: {
         borderBottomColor: "gainsboro",
+        backgroundColor: "white",
         borderBottomWidth: 1,
+        marginBottom: 10,
         padding: 10,
-        paddingLeft: 9,
+        textAlign: "center",
         fontSize: 18,
-        flexGrow: 1,
-        textAlign: 'center',
     },
 })

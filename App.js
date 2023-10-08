@@ -4,6 +4,7 @@ import {
   View,
   FlatList,
   RefreshControl,
+  ImageBackground,
 } from 'react-native';
 
 import Product from './Components/Product';
@@ -48,7 +49,11 @@ const App = () => {
 
   return (
     <DismissKeyboard>
-      <View style={styles.container}>
+      <ImageBackground
+        style={styles.container}
+        source={require('./assets/shopping-bg.jpg')}
+        resizeMode="cover"
+      >
         <DeleteModal
           visible={showDeleteModal}
           onRequestClose={() => setShowDeleteModal(false)}
@@ -73,7 +78,7 @@ const App = () => {
 
           />
         </View>
-      </View>
+      </ImageBackground>
     </DismissKeyboard>
   );
 };
@@ -85,7 +90,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingTop: 60,
     backgroundColor: "white",
-    flex: 1
+    flex: 1,
   },
   items: {
     marginBottom: 50,
