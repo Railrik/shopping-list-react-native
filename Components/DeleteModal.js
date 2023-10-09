@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
   },
   modalHeaderText: {
     color: colors.danger,
+    fontFamily: "Montserrat-bold",
   },
   modalBody: {
     flex: 1,
@@ -84,7 +85,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   modalBodyText: {
-    fontSize: 12,
+    fontSize: 14,
+    fontFamily: "Montserrat-regular",
   },
   modalFooter: {
     flexDirection: "row",

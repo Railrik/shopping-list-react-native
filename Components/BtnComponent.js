@@ -32,6 +32,8 @@ const styles = StyleSheet.create({
     },
     btnText: {
         color: colors.white,
+        fontFamily: "Montserrat-regular",
+        fontSize: 18
     },
     disabledBtn: {
         backgroundColor: colors.secondary
