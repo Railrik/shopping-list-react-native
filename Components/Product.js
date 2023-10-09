@@ -31,5 +31,6 @@ const styles = StyleSheet.create({
         color: colors.dark,
         fontSize: 17,
         padding: 15,
+        fontFamily: "Montserrat-regular",
     }
 });

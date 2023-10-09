@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     textInput: {
-        borderRadius: 5
+        borderRadius: 5,
+        fontFamily: "Montserrat-regular"
     }
 })

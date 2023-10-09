@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import {
   StyleSheet,
   View,
@@ -6,6 +6,10 @@ import {
   RefreshControl,
   ImageBackground,
 } from 'react-native';
+import { useFonts } from 'expo-font';
+
+import * as SplashScreen from 'expo-splash-screen';
+// import {} from '@expo-google-fonts/montserrat';
 
 import Product from './Components/Product';
 import AddProduct from './Components/AddProduct';
@@ -13,11 +17,28 @@ import DeleteModal from './Components/DeleteModal';
 import DismissKeyboard from './Components/DismissKeyboard';
 import Header from './Components/Header';
 
+SplashScreen.preventAutoHideAsync();
+
 const App = () => {
   const [productList, setProductList] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [keyTodelete, setKeyToDelete] = useState('');
   const [refreshing, setRefreshing] = useState(false);
+
+  const [fontsLoaded] = useFonts({
+    'Montserrat-bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+    'Montserrat-regular': require('./assets/fonts/Montserrat-Regular.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   const submitHandler = (product) => {
     const idString = Date.now().toString();
@@ -48,14 +69,14 @@ const App = () => {
   }
 
   return (
-    <DismissKeyboard>
+    <DismissKeyboard >
       <ImageBackground
         style={styles.bgImage}
         source={require('./assets/shopping-bg.jpg')}
         resizeMode="cover"
       >
         <Header />
-        <View style={styles.container}>
+        <View style={styles.container} onLayout={onLayoutRootView}>
           <DeleteModal
             visible={showDeleteModal}
             onRequestClose={() => setShowDeleteModal(false)}
