@@ -3,6 +3,8 @@ import {
     View,
 } from 'react-native';
 import BtnComponent from './BtnComponent';
+import { AntDesign } from '@expo/vector-icons';
+
 import colors from '../Constants/colors';
 
 const DeleteProduct = ({ deleteProductModal, idString }) => {
@@ -18,7 +20,7 @@ const DeleteProduct = ({ deleteProductModal, idString }) => {
                 disabled={false}
                 style={styles.deleteButton}
             >
-                X
+                <AntDesign name="delete" size={24} color={colors.danger} />
             </BtnComponent>
         </View>
     );
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
     },
     deleteButton: {
         flex: 1,
-        backgroundColor: colors.danger
+        backgroundColor: "transparent",
     },
 });
 
